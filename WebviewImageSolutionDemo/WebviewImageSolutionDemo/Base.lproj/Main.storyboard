@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-4s-kZR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="380"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VPW-mn-6vP"/>
+                                </connections>
+                            </webView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N8v-UU-W7v">
+                                <rect key="frame" x="340" y="432" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3vC-Bj-jYV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-jj-QNo">
+                                <rect key="frame" x="28" y="420" width="30" height="30"/>
+                                <state key="normal" title="刷新"/>
+                                <connections>
+                                    <action selector="doRefreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kTp-bz-xlA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-yD-9rj">
+                                <rect key="frame" x="13" y="470" width="60" height="30"/>
+                                <state key="normal" title="加载图片"/>
+                                <connections>
+                                    <action selector="doLoadImageButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2X6-g9-jeR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Cxe-jj-QNo" firstAttribute="top" secondItem="HfO-4s-kZR" secondAttribute="bottom" constant="20" id="4BY-hm-Mfy"/>
+                            <constraint firstItem="R1V-yD-9rj" firstAttribute="centerX" secondItem="Cxe-jj-QNo" secondAttribute="centerX" id="4Kv-c5-lwo"/>
+                            <constraint firstItem="R1V-yD-9rj" firstAttribute="top" secondItem="Cxe-jj-QNo" secondAttribute="bottom" constant="20" id="6R5-TF-bdB"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="HfO-4s-kZR" secondAttribute="bottom" constant="200" id="GHO-sE-WHK"/>
+                            <constraint firstItem="R1V-yD-9rj" firstAttribute="leading" secondItem="Cxe-jj-QNo" secondAttribute="trailing" constant="-41" id="I7R-iu-vnb"/>
+                            <constraint firstAttribute="trailing" secondItem="N8v-UU-W7v" secondAttribute="trailing" constant="20" id="Idb-r4-EzH"/>
+                            <constraint firstAttribute="trailing" secondItem="HfO-4s-kZR" secondAttribute="trailing" id="PWJ-Zc-UFt"/>
+                            <constraint firstItem="HfO-4s-kZR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SSL-i4-9mP"/>
+                            <constraint firstItem="Cxe-jj-QNo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="YvK-Pt-Wak"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="N8v-UU-W7v" secondAttribute="bottom" constant="40" id="cXH-aG-8Ix"/>
+                            <constraint firstItem="Cxe-jj-QNo" firstAttribute="leading" secondItem="R1V-yD-9rj" secondAttribute="trailing" id="e3V-je-d80"/>
+                            <constraint firstItem="HfO-4s-kZR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eWA-VG-Dm6"/>
+                            <constraint firstItem="N8v-UU-W7v" firstAttribute="top" secondItem="HfO-4s-kZR" secondAttribute="bottom" constant="32" id="j1X-Z4-J2L"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="e3V-je-d80"/>
+                                <exclude reference="I7R-iu-vnb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="N8v-UU-W7v" id="MTH-U1-v9q"/>
+                        <outlet property="webview" destination="HfO-4s-kZR" id="5wl-Qv-y8R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
